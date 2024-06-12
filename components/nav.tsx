@@ -7,9 +7,15 @@ type Props = {};
 
 const nav = (props: Props) => {
     return (
-        <div className="flex z-10 relative justify-between text-white">
-            <Link href={"/"}>Home</Link>
-            <div className="flex gap-4">
+        <div className="flex z-10 relative justify-between text-white p-4">
+            <Link href={"/"}>
+                <img
+                    src="navbarlogo.png"
+                    alt="HannulaWells navigation bar logo."
+                    className="cursor-pointer"
+                />
+            </Link>
+            <div className="flex gap-4 items-center text-xl">
                 <Link href={"/services"}>Services</Link>
                 <Link href={"/content"}>Content</Link>
                 <Link href={"/about"}>About</Link>

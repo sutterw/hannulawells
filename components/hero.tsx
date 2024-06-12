@@ -25,7 +25,7 @@ const Hero = (props: Props) => {
                     alt="HannulaWells logo"
                     className="mx-auto mt-4"
                 />
-                <p className="text-lg mt-4">Cyber Security Services</p>
+                <p className="text-2xl mt-4">Cyber Security Services</p>
             </div>
         </section>
     );
