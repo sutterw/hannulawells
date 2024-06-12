@@ -1,7 +1,8 @@
-import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/nav";
+import Hero from "@/components/hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="!scroll-smooth">
-            <body className={inter.className}>{children}</body>
+            <body className="">
+                <Nav />
+                <main className="container">
+                    <Hero />
+                </main>
+            </body>
         </html>
     );
 }
