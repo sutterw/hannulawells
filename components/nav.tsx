@@ -7,7 +7,7 @@ type Props = {};
 
 const nav = (props: Props) => {
     return (
-        <div className="flex z-10 relative justify-between text-white p-4">
+        <div className="flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4">
             <Link href={"/"}>
                 <img
                     src="navbarlogo.png"

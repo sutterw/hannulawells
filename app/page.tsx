@@ -8,7 +8,7 @@ import Quote from "@/pages/quote";
 export default function Home() {
     return (
         <>
-            <div className="flex flex-col items-center px-4 pt-32">
+            <div className="flex flex-col">
                 <Homepage />
                 <Services />
                 <Content />
