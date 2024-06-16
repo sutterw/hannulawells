@@ -15,14 +15,14 @@ const Footer = (props: Props) => {
                 <Image
                     src="/linkedin.png"
                     alt="LinkedIn"
-                    width={500}
-                    height={500}
+                    width={150}
+                    height={150}
                 />
                 <Image
                     src="/instagram.png"
                     alt="Instagram"
-                    width={500}
-                    height={500}
+                    width={150}
+                    height={150}
                 />
             </div>
         </div>
