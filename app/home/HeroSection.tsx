@@ -2,8 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
-const hero = () => {
+type Props = {};
+
+const HeroSection = (props: Props) => {
     return (
         <section className="relative w-full h-screen bg-cover">
             <video
@@ -18,10 +21,12 @@ const hero = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h1 className="text-4xl font-bold">People first.</h1>
                 <h1 className="text-4xl font-bold mt-4">Technology second.</h1>
-                <img
-                    src="logo.png"
+                <Image
+                    src="/logo.png"
                     alt="HannulaWells logo"
                     className="mx-auto mt-4"
+                    width={500}
+                    height={500}
                 />
                 <p className="text-2xl mt-4">Cyber Security Services</p>
                 <motion.div
@@ -51,4 +56,4 @@ const hero = () => {
     );
 };
 
-export default hero;
+export default HeroSection;

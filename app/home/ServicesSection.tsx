@@ -1,11 +1,11 @@
-"use client";
 import React from "react";
-import Hero from "@/components/hero";
+import Link from "next/link";
 
-const home = () => {
+type Props = {};
+
+const ServicesSection = (props: Props) => {
     return (
-        <div className="flex flex-col">
-            <Hero />
+        <section>
             <div className="flex flex-row">
                 <div
                     className="relative flex-1"
@@ -70,15 +70,15 @@ const home = () => {
                 <hr className="flex-1 my-12 h-px bg-blue-700" />
             </div>
             <button>
-                <a
+                <Link
                     href="/services"
                     className="text-white py-2 px-4 border-4 border-gray-500 rounded-lg hover:bg-gray-500 hover:text-black transition-all"
                 >
                     More Info
-                </a>
+                </Link>
             </button>
-        </div>
+        </section>
     );
 };
 
-export default home;
+export default ServicesSection;

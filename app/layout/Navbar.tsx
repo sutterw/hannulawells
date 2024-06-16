@@ -2,17 +2,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
-const nav = (props: Props) => {
+const Navbar = (props: Props) => {
     return (
-        <div className="flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4">
+        <nav className="flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4">
             <Link href={"/"}>
-                <img
-                    src="navbarlogo.png"
+                <Image
+                    src="/navbarlogo.png"
                     alt="HannulaWells navigation bar logo."
                     className="cursor-pointer"
+                    width={75}
+                    height={75}
                 />
             </Link>
             <div className="flex gap-4 items-center text-xl">
@@ -51,8 +54,8 @@ const nav = (props: Props) => {
                     </Link>
                 </motion.div>
             </div>
-        </div>
+        </nav>
     );
 };
 
-export default nav;
+export default Navbar;

@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 
 type Props = {};
 
-const contact = (props: Props) => {
+const Contact = (props: Props) => {
     return <div>contact</div>;
 };
 
-export default contact;
+export default Contact;

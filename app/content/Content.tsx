@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 
 type Props = {};
 
-const content = (props: Props) => {
+const Content = (props: Props) => {
     return <div>content</div>;
 };
 
-export default content;
+export default Content;

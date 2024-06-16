@@ -1,21 +1,15 @@
-import Homepage from "@/pages/home";
-import Services from "@/pages/services";
-import Content from "@/pages/content";
-import About from "@/pages/about";
-import Contact from "@/pages/contact";
-import Quote from "@/pages/quote";
+import React from "react";
+import Hero from "./home/HeroSection";
+import Services from "./home/ServicesSection";
+import RootLayout from "./layout";
 
 export default function Home() {
     return (
-        <>
+        <RootLayout>
             <div className="flex flex-col">
-                <Homepage />
+                <Hero />
                 <Services />
-                <Content />
-                <About />
-                <Contact />
-                <Quote />
             </div>
-        </>
+        </RootLayout>
     );
 }

@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 
 type Props = {};
 
-const quote = (props: Props) => {
+const Quote = (props: Props) => {
     return <div>quote</div>;
 };
 
-export default quote;
+export default Quote;
