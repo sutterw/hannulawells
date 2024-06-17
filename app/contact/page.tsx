@@ -1,13 +1,12 @@
-"use client";
 import React from "react";
-import Services from "./Services";
+import Contact from "./Contact";
 
 type Props = {};
 
 const page = (props: Props) => {
     return (
         <div>
-            <Services />
+            <Contact />
         </div>
     );
 };
