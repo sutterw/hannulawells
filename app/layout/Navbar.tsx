@@ -14,8 +14,8 @@ const Navbar = (props: Props) => {
                     src="/navbarlogo.png"
                     alt="HannulaWells navigation bar logo."
                     className="cursor-pointer"
-                    width={75}
-                    height={75}
+                    width={400}
+                    height={65}
                 />
             </Link>
             <div className="flex gap-4 items-center text-xl">

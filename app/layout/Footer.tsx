@@ -9,21 +9,25 @@ const Footer = (props: Props) => {
             <div className="flex flex-row gap-16 justify-between">
                 <p>© 2023 by HannulaWells</p>
                 <p>info@hannulawells.com</p>
-                <p>(805) 305 - 8773</p>
+                <p>+1 (805) 305-8773</p>
             </div>
             <div className="ml-12 flex flex-row gap-4">
-                <Image
-                    src="/linkedin.png"
-                    alt="LinkedIn"
-                    width={150}
-                    height={150}
-                />
-                <Image
-                    src="/instagram.png"
-                    alt="Instagram"
-                    width={150}
-                    height={150}
-                />
+                <a href="https://www.linkedin.com/company/hannulawells/">
+                    <Image
+                        src="/linkedin.png"
+                        alt="LinkedIn"
+                        width={35}
+                        height={35}
+                    />
+                </a>
+                <a href="https://www.instagram.com/hannulawells/">
+                    <Image
+                        src="/instagram.png"
+                        alt="Instagram"
+                        width={35}
+                        height={35}
+                    />
+                </a>
             </div>
         </div>
     );
