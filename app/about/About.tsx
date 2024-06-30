@@ -16,9 +16,7 @@ const About = () => {
                 }`}
                 style={{ backgroundImage: "url('/mountains.png')" }}
             ></div>
-            {/* Top Gradient Overlay */}
             <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black to-transparent"></div>
-            {/* Bottom Gradient Overlay */}
             <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black to-transparent"></div>
 
             <div className="relative z-10 flex flex-col items-center justify-center">
