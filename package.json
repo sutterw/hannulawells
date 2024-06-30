@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@swc/helpers": "^0.5.11",
+        "@tailwindcss/line-clamp": "^0.4.4",
         "@types/scheduler": "^0.16.8",
         "framer-motion": "^11.2.6",
         "next": "^14.2.4",
