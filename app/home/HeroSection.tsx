@@ -18,10 +18,9 @@ const HeroSection = (props: Props) => {
             >
                 <source src="hero-video.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+            <div className="absolute mt-[8%] inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h1 className="text-6xl font-bold">
-                    <span className="opacity-70">People</span>
-                    {""}first.
+                    <span className="opacity-70">People</span> first.
                 </h1>
                 <h1 className="text-6xl font-bold mt-3 opacity-70">
                     Technology second.
@@ -29,15 +28,15 @@ const HeroSection = (props: Props) => {
                 <Image
                     src="/logo.png"
                     alt="HannulaWells logo"
-                    className="mx-auto mt-12 mb-8"
-                    width={225}
+                    className="mx-auto mt-12 mb-4"
+                    width={150}
                     height={146}
                 />
                 <p className="text-4xl font-bold mt-4">
                     Cyber Security Services
                 </p>
                 <motion.div
-                    className="mt-10 flex gap-4"
+                    className="mt-10 flex gap-4 relative top-[10%]"
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{

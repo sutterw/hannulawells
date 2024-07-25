@@ -30,7 +30,7 @@ const About = () => {
                     <span className="inline-block transform duration-[2000ms] group-hover:scale-[30]">
                         o
                     </span>
-                    ple <span className="italic ml-2">first</span>?
+                    ple <span className="italic ml-2"> first</span>?
                 </h1>
                 <div
                     className={`flex flex-col gap-8 text-center text-3xl transition-all duration-[2000ms] px-[5rem] shadow-custom ${

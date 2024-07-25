@@ -16,7 +16,7 @@ const Contact = (props: Props) => {
                 <img
                     src="/phoneus.svg"
                     alt="contact phone number"
-                    className="transition transform hover:scale-110"
+                    className="transition transform hover:scale-110 hover:font-bold"
                 />
                 <img
                     src="/emailus.svg"
