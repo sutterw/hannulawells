@@ -5,13 +5,13 @@ type Props = {};
 
 const Footer = (props: Props) => {
     return (
-        <div className="flex flex-row p-8 mx-8 justify-between text-white">
-            <div className="flex flex-row gap-16 justify-between">
+        <footer className="p-8 mx-8 text-white flex flex-col md:flex-row justify-between items-center">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-16 items-center text-center md:text-left">
                 <p>© 2023 by HannulaWells</p>
                 <p>info@hannulawells.com</p>
                 <p>+1 (805) 305-8773</p>
             </div>
-            <div className="ml-12 flex flex-row gap-4">
+            <div className="flex flex-row gap-4 mt-4 md:mt-0">
                 <a href="https://www.linkedin.com/company/hannulawells/">
                     <Image
                         src="/linkedin.png"
@@ -29,7 +29,7 @@ const Footer = (props: Props) => {
                     />
                 </a>
             </div>
-        </div>
+        </footer>
     );
 };
 
