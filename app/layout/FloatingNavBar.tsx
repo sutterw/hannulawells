@@ -38,7 +38,7 @@ const LinksContainer: React.FC<LinksContainerProps> = ({ setActive }) => {
         setActive(false);
     };
     return (
-        <motion.div className="space-y-4 p-20 flex flex-col items-center gap-12 font-MetalMania">
+        <motion.div className="space-y-4 p-20 flex flex-col items-center gap-6">
             {LINKS.map((l, idx) => {
                 return (
                     <NavLink
@@ -81,7 +81,7 @@ const NavLink: React.FC<NavLinkProps> = ({ children, href, idx, onClick }) => {
             exit={{ opacity: 0, y: -8 }}
             href={href}
             onClick={handleClick}
-            className="block text-5xl font-semibold text-white hover:underline md:text-6xl"
+            className="block text-5xl font-semibold text-white hover:underline md:text-6xl text-center"
         >
             {children}
         </motion.a>
@@ -104,7 +104,7 @@ const HamburgerButton: React.FC<HamburgerButtonProps> = ({
                 animate={active ? "open" : "closed"}
                 variants={UNDERLAY_VARIANTS}
                 style={{ top: 16, right: 16 }}
-                className="fixed z-10 rounded-xl bg-[#c6705e] shadow-lg shadow-[#c7634e]/20"
+                className="fixed z-40 rounded-xl bg-[rgba(157,196,255,1)] shadow-lg shadow-[rgba(157,196,255,0.8)]/20"
             />
 
             <motion.button
@@ -166,7 +166,7 @@ const LINKS = [
 const UNDERLAY_VARIANTS = {
     open: {
         width: "calc(100% - 32px)",
-        height: "calc(100vh - 32px)",
+        height: "calc(100vh - 42px)",
         transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
     },
     closed: {
