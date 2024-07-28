@@ -9,7 +9,7 @@ type CardProps = {
 
 const Card = ({ image, title, description, author }: CardProps) => {
     return (
-        <div className="card w-96 h-[32rem] rounded-lg p-6 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+        <div className="card w-full sm:w-96 h-[32rem] rounded-lg p-6 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
             <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <img
                 src={image}
@@ -18,7 +18,7 @@ const Card = ({ image, title, description, author }: CardProps) => {
             />
             <div className="relative z-10 text-white flex flex-col justify-between h-full">
                 <div className="flex flex-col">
-                    <h1 className="text-4xl font-bold m-0 transform group-hover:text-[2.4rem] group-hover:leading-[3rem] transition-all duration-500 line-clamp-3 whitespace-pre-line">
+                    <h1 className="text-2xl sm:text-4xl font-bold m-0 transform group-hover:text-[2.4rem] group-hover:leading-[3rem] transition-all duration-500 line-clamp-3 whitespace-pre-line">
                         {title}
                     </h1>
                     <div className="info flex flex-col justify-center items-center opacity-0 transform -translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
@@ -31,7 +31,7 @@ const Card = ({ image, title, description, author }: CardProps) => {
                     </div>
                 </div>
                 <div className="mt-auto">
-                    <h2 className="text-xl font-semibold group-hover:opacity-0 transition-opacity duration-500">
+                    <h2 className="text-lg sm:text-xl font-semibold group-hover:opacity-0 transition-opacity duration-500">
                         {author}
                     </h2>
                 </div>
