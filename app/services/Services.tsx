@@ -156,7 +156,7 @@ const Services = () => {
                             Technology Solutions
                         </h1>
                         <ul className="grid md:grid-cols-2 gap-8">
-                            {["MDR $ IR", "IAM", "Firewalls", "Cloud"].map(
+                            {["MDR & IR", "IAM", "Firewalls", "Cloud"].map(
                                 (title, index) => (
                                     <li
                                         key={index}

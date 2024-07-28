@@ -11,7 +11,7 @@ const Navbar = (props: Props) => {
     return (
         <div>
             {/* Desktop Navbar */}
-            <nav className="hidden md:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4">
+            <nav className="hidden lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4">
                 <Link
                     href={"/"}
                     className="group cursor-pointer flex items-center relative"
@@ -99,7 +99,7 @@ const Navbar = (props: Props) => {
             </nav>
 
             {/* Mobile and Tablet Navbar */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
                 <FloatingNavbar />
             </div>
         </div>
