@@ -31,7 +31,7 @@ const Contact = (props: Props) => {
                 </div>
                 <div className="flex flex-1 justify-center lg:justify-end items-center md:p-8 lg:p-4">
                     <form
-                        className="w-full flex flex-col items-center text-black bg-[#2A2C30] bg-opacity-80 p-6 md:p-8 lg:p-4 lg:w-[50%] rounded-2xl shadow-lg"
+                        className="w-full flex flex-col items-center text-black bg-[#2A2C30] bg-opacity-80 p-6 md:p-8 lg:p-4 lg:w-[50%] rounded-2xl shadow-lg opacity-60"
                         action={async (formData) => {
                             const { data, error } = await sendEmail(formData);
 
