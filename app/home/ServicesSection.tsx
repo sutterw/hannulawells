@@ -41,7 +41,6 @@ const ServicesSection = () => {
                             index={index}
                             service={service}
                             expanded={expandedIndex === index}
-                            expandedWidth="200%" // Adjust the expanded width as needed
                             onClick={handleExpand}
                         />
                     ))}
