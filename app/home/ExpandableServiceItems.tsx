@@ -20,38 +20,94 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
 }) => {
     return (
         <li
-            className={`relative flex flex-col justify-center items-center rounded-2xl bg-black bg-opacity-70 gradient-border ${
+            className={`relative flex flex-col justify-center items-center rounded-2xl bg-black bg-opacity-70 gradient-border transition-all duration-500 ease-in-out w-[14rem] h-[14rem] ${
                 expanded ? "z-10" : "z-0"
             }`}
-            style={expanded ? { position: "absolute", width: "71%" } : {}}
+            style={
+                expanded
+                    ? {
+                          position: "absolute",
+                          width: "100%",
+                      }
+                    : {}
+            }
         >
             <motion.button
                 onClick={() => onClick(index)}
                 initial={{ width: "100%" }}
-                animate={{ width: expanded ? "100%" : "100%" }}
-                transition={{ duration: 0.5 }}
+                animate={{
+                    width: expanded ? "100%" : "100%",
+                }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 layout
-                className="flex flex-row p-4 max-h-40 items-center justify-center border-[1px] rounded-2xl bg-[rgba(22,22,41,1)] border-[rgba(46,46,87,1)] h-full w-full"
+                style={{
+                    borderRadius: "1rem",
+                    borderWidth: "1px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem",
+                    maxHeight: "10rem",
+                    height: "100%",
+                    width: "100%",
+                    backgroundColor: "rgba(22,22,41,1)",
+                    borderColor: "rgba(46,46,87,1)",
+                }}
             >
-                <div className="flex flex-col items-center">
-                    <img src={service.img} alt={service.title} className="" />
-                    <h2 className="text-2xl mt-4 text-white bg-none">
+                <motion.div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    }}
+                    layout
+                >
+                    <motion.img
+                        src={service.img}
+                        alt={service.title}
+                        style={{ height: "4rem", width: "4rem" }}
+                        layout
+                    />
+                    <motion.h2
+                        style={{
+                            fontSize: "1.5rem",
+                            lineHeight: "2rem",
+                            marginTop: "1rem",
+                            background: "none",
+                            color: "white",
+                        }}
+                        layout
+                    >
                         {service.title}
-                    </h2>
-                </div>
+                    </motion.h2>
+                </motion.div>
                 <AnimatePresence>
                     {expanded && (
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="flex w-full p-4 text-white items-center"
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                color: "white",
+                                padding: "1rem",
+                                width: "100%",
+                            }}
+                            layout
                         >
-                            <hr className="border-t-[5rem] w-[1px]" />
-                            <p className="text-md line-clamp-3">
+                            <motion.hr
+                                style={{
+                                    backgroundColor: "white",
+                                    width: "1px",
+                                    height: "7rem",
+                                    marginRight: "2rem",
+                                }}
+                                layout
+                            />
+                            <motion.p className="line-clamp-3" layout>
                                 {service.description}
-                            </p>
+                            </motion.p>
                         </motion.div>
                     )}
                 </AnimatePresence>

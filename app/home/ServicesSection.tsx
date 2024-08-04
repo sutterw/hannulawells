@@ -34,7 +34,7 @@ const ServicesSection = () => {
                     <span className="text-white text-3xl">Testing</span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)]" />
                 </div>
-                <ul className="grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%]">
+                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%]">
                     {testingData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}
