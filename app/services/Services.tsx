@@ -72,7 +72,7 @@ const Services = () => {
                             {testingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-4/5 pb-12 gap-4 justify-center text-center items-center rounded-2xl p-8 bg-black bg-opacity-70 gradient-border"
+                                    className="relative flex flex-col w-4/5 pb-12 gap-4 justify-center items-center rounded-2xl p-8 bg-black bg-opacity-70 gradient-border"
                                 >
                                     <img src={item.img} className="bg-none" />
                                     <h2 className="text-2xl font-medium bg-none">
@@ -105,7 +105,7 @@ const Services = () => {
                             {securityConsultingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-4/5 pb-12 gap-4 justify-center text-center items-center rounded-2xl p-8 bg-black bg-opacity-70 gradient-border"
+                                    className="relative flex flex-col w-4/5 pb-12 gap-4 justify-center items-center rounded-2xl p-8 bg-black bg-opacity-70 gradient-border"
                                 >
                                     <img src={item.img} className="bg-none" />
                                     <h2 className="text-2xl font-medium bg-none">
@@ -138,7 +138,7 @@ const Services = () => {
                             {technologySolutionsData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-4/5 pb-12 gap-4 justify-center text-center items-center rounded-2xl p-8 bg-black bg-opacity-70 gradient-border"
+                                    className="relative flex flex-col w-4/5 pb-12 gap-4 justify-center items-center rounded-2xl p-8 bg-black bg-opacity-70 gradient-border"
                                 >
                                     <img src={item.img} className="bg-none" />
                                     <h2 className="text-2xl font-medium bg-none">

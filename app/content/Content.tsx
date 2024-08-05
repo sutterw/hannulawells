@@ -11,7 +11,7 @@ const Content = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
             </div>
             <div className="relative z-10 w-full max-w-screen-xl p-4">
-                <h1 className="text-3xl sm:text-6xl lg:text-8xl mt-16 font-medium flex justify-center py-12 text-center">
+                <h1 className="text-6xl lg:text-8xl mt-16 font-medium flex justify-center py-12 text-center">
                     Good Reads
                 </h1>
                 <Cards />

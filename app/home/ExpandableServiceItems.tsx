@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 interface ServiceItemProps {
     index: number;
@@ -99,6 +100,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                             style={{
                                 display: "flex",
                                 alignItems: "center",
+                                textAlign: "start",
                                 color: "white",
                                 padding: "1rem",
                                 width: "100%",
@@ -117,12 +119,24 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                                 layout
                             />
                             <motion.p
-                                className="line-clamp-3"
+                                className="line-clamp-3 text-[1.25rem] leading-9"
                                 layout
                                 transition={{ duration: 0.5 }}
                             >
                                 {service.description}
                             </motion.p>
+                            <motion.button
+                                layout
+                                transition={{ duration: 0.5 }}
+                            >
+                                <a
+                                    href="#"
+                                    className="flex flex-row w-[10rem] ml-6 justify-center relative top-[50px] text-white text-[1.5rem] py-1 px-2 rounded-[4px] bg-[rgba(46,46,87,1)] hover:bg-white hover:text-[rgba(46,46,87,1)]"
+                                >
+                                    More Info
+                                    <FaArrowRightLong className="ml-[5px] mt-2 p-1" />
+                                </a>
+                            </motion.button>
                         </motion.div>
                     )}
                 </AnimatePresence>

@@ -45,14 +45,34 @@ const HeroSection = (props: Props) => {
                     }}
                 >
                     <Link
-                        href="/contact"
-                        className="relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] border-violet-400 px-4 py-2 font-semibold text-violet-400 transition-all duration-500 hover:scale-105 hover:text-neutral-900 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-violet-400 before:transition-transform before:duration-1000 before:content-[''] hover:before:translate-x-0 hover:before:translate-y-0 active:scale-95"
+                        href={"/contact"}
+                        className={`
+                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
+                                border-white px-4 py-2 font-semibold text-white transition-all duration-500
+                                before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
+                                before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
+                                before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
+                                before:content-[""] shadow-md
+                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(157,196,255,0.8)]
+                                hover:border-[rgba(157,196,255,0.8)] hover:shadow-[0_0_20px_rgba(157,196,255,0.8)]
+                                hover:before:translate-x-[0%] hover:before:translate-y-[0%]
+                            `}
                     >
                         <span>Contact Us</span>
                     </Link>
                     <Link
-                        href="/quote"
-                        className="relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] border-violet-400 px-4 py-2 font-semibold text-violet-400 transition-all duration-500 hover:scale-105 hover:text-neutral-900 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-violet-400 before:transition-transform before:duration-1000 before:content-[''] hover:before:translate-x-0 hover:before:translate-y-0 active:scale-95"
+                        href={"#our-services"}
+                        className={`
+                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
+                                border-white px-4 py-2 font-semibold text-white transition-all duration-500
+                                before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
+                                before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
+                                before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
+                                before:content-[""] shadow-md
+                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(157,196,255,0.8)]
+                                hover:border-[rgba(157,196,255,0.8)] hover:shadow-[0_0_20px_rgba(157,196,255,0.8)]
+                                hover:before:translate-x-[0%] hover:before:translate-y-[0%]
+                            `}
                     >
                         <span>Learn More</span>
                     </Link>

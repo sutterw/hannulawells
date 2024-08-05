@@ -26,7 +26,7 @@ const ServicesSection = () => {
     };
 
     return (
-        <section className="flex flex-col">
+        <section id="our-services" className="flex flex-col">
             <div className="grid md:grid-cols-2">
                 {/* Your existing top section */}
             </div>
