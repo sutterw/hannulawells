@@ -19,7 +19,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <body className="bg-black">
                 <Navbar />
                 <main className="flex-1">{children}</main>
-                <hr className="flex-1 mt-12 h-px bg-blue-700" />
+                <hr className="flex-1 mt-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 <Footer />
             </body>
         </html>

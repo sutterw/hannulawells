@@ -3,24 +3,26 @@ import { AnimatePresence, motion } from "framer-motion";
 
 interface ServiceItemProps {
     index: number;
+    section: string;
     service: {
         img: string;
         title: string;
         description: string;
     };
     expanded: boolean;
-    onClick: (index: number) => void;
+    onClick: (section: string, index: number) => void;
 }
 
 const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
     index,
+    section,
     service,
     expanded,
     onClick,
 }) => {
     return (
         <li
-            className={`relative flex flex-col justify-center items-center rounded-2xl bg-black bg-opacity-70 gradient-border transition-all duration-500 ease-in-out w-[14rem] h-[14rem] ${
+            className={`relative flex flex-col justify-center items-center rounded-2xl bg-black bg-opacity-70 gradient-border transition-all duration-500 w-[14rem] h-[14rem] ${
                 expanded ? "z-10" : "z-0"
             }`}
             style={
@@ -33,12 +35,12 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
             }
         >
             <motion.button
-                onClick={() => onClick(index)}
+                onClick={() => onClick(section, index)}
                 initial={{ width: "100%" }}
                 animate={{
                     width: expanded ? "100%" : "100%",
                 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.5 }}
                 layout
                 style={{
                     borderRadius: "1rem",
@@ -51,6 +53,8 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                     maxHeight: "10rem",
                     height: "100%",
                     width: "100%",
+                    minHeight: "12rem",
+                    minWidth: "12rem",
                     backgroundColor: "rgba(22,22,41,1)",
                     borderColor: "rgba(46,46,87,1)",
                 }}
@@ -61,23 +65,27 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                         flexDirection: "column",
                         alignItems: "center",
                     }}
-                    layout
+                    transition={{ duration: 0.5 }}
+                    layout="size"
                 >
                     <motion.img
                         src={service.img}
                         alt={service.title}
-                        style={{ height: "4rem", width: "4rem" }}
+                        style={{ height: "3rem", width: "3rem" }}
                         layout
+                        transition={{ duration: 0.5 }}
                     />
                     <motion.h2
                         style={{
-                            fontSize: "1.5rem",
+                            fontSize: "1.3rem",
                             lineHeight: "2rem",
-                            marginTop: "1rem",
+                            marginTop: ".5rem",
+                            marginBottom: ".5rem",
                             background: "none",
                             color: "white",
                         }}
                         layout
+                        transition={{ duration: 0.5 }}
                     >
                         {service.title}
                     </motion.h2>
@@ -87,6 +95,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5 }}
                             style={{
                                 display: "flex",
                                 alignItems: "center",
@@ -98,14 +107,20 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                         >
                             <motion.hr
                                 style={{
-                                    backgroundColor: "white",
+                                    backgroundColor: "rgba(46,46,87,1)",
                                     width: "1px",
                                     height: "7rem",
                                     marginRight: "2rem",
+                                    borderTop: "none",
                                 }}
+                                transition={{ duration: 0.5 }}
                                 layout
                             />
-                            <motion.p className="line-clamp-3" layout>
+                            <motion.p
+                                className="line-clamp-3"
+                                layout
+                                transition={{ duration: 0.5 }}
+                            >
                                 {service.description}
                             </motion.p>
                         </motion.div>

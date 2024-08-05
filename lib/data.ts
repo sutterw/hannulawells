@@ -55,25 +55,29 @@ export const securityConsultingData = [
 export const technologySolutionsData = [
     {
         img: "/testing9.svg",
-        title: "Identity Access Management (IAM)",
+        title: "IAM",
+        header: "Identity Access Management (IAM)",
         description:
             "Identity Access Management (IAM) solutions provide centralized control over users' access to critical resources within an organization's network. Whether your organization operates in a cloud-based environment or relies on on-premises systems, IAM ensures secure and efficient management of user identities and permissions. Our specialized services and strategic partnerships offer customized IAM solutions, including identity provisioning, authentication, and access control, tailored to your organization's specific needs.",
     },
     {
         img: "/testing10.svg",
-        title: "Managed Detection Response & Incident Response (MDR & IR)",
+        title: "MDR & IR",
+        header: "Managed Detection Response & Incident Response (MDR & IR)",
         description:
             "Managed Detection and Response (MDR) / Incident Response (IR) services offer proactive monitoring, detection, and swift response to cybersecurity threats and incidents. Whether your organization faces sophisticated cyber-attacks or needs assistance in handling security incidents, MDR/IR services provide expert guidance and support. Our specialized services deliver round-the-clock monitoring, rapid incident identification, containment, and recovery, ensuring your organization stays ahead of emerging threats and complies with regulatory requirements.",
     },
     {
         img: "/testing11.svg",
         title: "Firewalls",
+        header: "Firewalls",
         description:
             "Firewalls serve as the frontline defense in safeguarding your organization's network infrastructure against unauthorized access and malicious activities. Whether your network operates in a traditional on-premises environment or extends to cloud-based services, firewalls play a critical role in enforcing security policies and controlling incoming and outgoing traffic. Through our strategic partnerships we bring value in offering tailored firewall solutions for your organizational needs.",
     },
     {
         img: "/testing12.svg",
         title: "Cloud",
+        header: "Cloud",
         description:
             "Our cloud consulting services provide strategic guidance and expertise in navigating the complexities of cloud adoption and management. Whether your organization is considering migrating to the cloud, optimizing existing cloud infrastructure, or addressing cloud security concerns, our specialized consultants offer tailored solutions to meet your unique needs. From initial assessment to implementation and ongoing support, we deliver comprehensive cloud consulting services, ensuring your organization harnesses the full potential of cloud technology while maintaining robust security measures and compliance standards.",
     },

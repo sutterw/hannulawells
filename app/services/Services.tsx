@@ -142,7 +142,7 @@ const Services = () => {
                                 >
                                     <img src={item.img} className="bg-none" />
                                     <h2 className="text-2xl font-medium bg-none">
-                                        {item.title}
+                                        {item.header}
                                     </h2>
                                     <p className="bg-none">
                                         {item.description}
