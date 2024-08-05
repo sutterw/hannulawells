@@ -47,14 +47,14 @@ const HeroSection = (props: Props) => {
                     <Link
                         href={"/contact"}
                         className={`
-                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
-                                border-white px-4 py-2 font-semibold text-white transition-all duration-500
+                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg 
+                             px-4 py-2 font-semibold text-white transition-all duration-500
                                 before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
                                 before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
                                 before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
-                                before:content-[""] shadow-md
-                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(157,196,255,0.8)]
-                                hover:border-[rgba(157,196,255,0.8)] hover:shadow-[0_0_20px_rgba(157,196,255,0.8)]
+                                before:content-[""] 
+                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(255,255,255,0.8)]
+                                hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]
                                 hover:before:translate-x-[0%] hover:before:translate-y-[0%]
                             `}
                     >
@@ -63,14 +63,14 @@ const HeroSection = (props: Props) => {
                     <Link
                         href={"#our-services"}
                         className={`
-                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
-                                border-white px-4 py-2 font-semibold text-white transition-all duration-500
+                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg 
+                             px-4 py-2 font-semibold text-white transition-all duration-500
                                 before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
                                 before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
                                 before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
-                                before:content-[""] shadow-md
-                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(157,196,255,0.8)]
-                                hover:border-[rgba(157,196,255,0.8)] hover:shadow-[0_0_20px_rgba(157,196,255,0.8)]
+                                before:content-[""] 
+                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(255,255,255,0.8)]
+                                hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]
                                 hover:before:translate-x-[0%] hover:before:translate-y-[0%]
                             `}
                     >
