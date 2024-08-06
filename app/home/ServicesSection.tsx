@@ -107,7 +107,7 @@ const ServicesSection = () => {
             <button className="my-20">
                 <Link
                     href="/services"
-                    className="text-white text-2xl py-4 px-8 border-2 bg-black border-[rgba(22,22,41,1)] rounded-lg hover:bg-blue-200 hover:border-blue-100 transition duration-700"
+                    className="text-[#B5B5B5] text-2xl py-4 px-8 border-2 bg-transparent border-[#1C1C2D] rounded-lg hover:bg-[#5B5B66] hover:border-[#737384] hover:text-white transition duration-700"
                 >
                     More Info
                 </Link>
