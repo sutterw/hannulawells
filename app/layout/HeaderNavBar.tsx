@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,62 +7,11 @@ import FloatingNavbar from "./FloatingNavBar";
 
 type Props = {};
 
-const Navbar = (props: Props) => {
-    const [showNavbar, setShowNavbar] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
-
-    const controlNavbar = () => {
-        if (typeof window !== "undefined") {
-            if (window.scrollY === 0) {
-                setShowNavbar(false);
-            } else if (window.scrollY > lastScrollY) {
-                setShowNavbar(false);
-            } else {
-                setShowNavbar(true);
-            }
-            setLastScrollY(window.scrollY);
-        }
-    };
-
-    const handleMouseEnter = () => {
-        if (window.scrollY !== 0) {
-            setShowNavbar(true);
-        }
-    };
-
-    const handleMouseLeave = () => {
-        if (window.scrollY !== 0) {
-            setShowNavbar(false);
-        }
-    };
-
-    const handleMouseMove = (event: MouseEvent) => {
-        if (event.clientY < 50 && window.scrollY !== 0) {
-            setShowNavbar(true);
-        }
-    };
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener("scroll", controlNavbar);
-            window.addEventListener("mousemove", handleMouseMove);
-            return () => {
-                window.removeEventListener("scroll", controlNavbar);
-                window.removeEventListener("mousemove", handleMouseMove);
-            };
-        }
-    }, [lastScrollY]);
-
+const HeaderNavbar = (props: Props) => {
     return (
         <div>
             {/* Desktop Navbar */}
-            <motion.nav
-                className={`hidden lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4 transition-all duration-500 ${
-                    showNavbar ? "translate-y-0" : "-translate-y-full"
-                } ${showNavbar ? "bg-black bg-opacity-60" : "bg-transparent"}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
+            <nav className="hidden lg:flex z-50 absolute top-0 left-0 right-0 justify-between text-white p-4">
                 <Link
                     href={"/"}
                     className="group cursor-pointer flex items-center relative"
@@ -128,9 +77,14 @@ const Navbar = (props: Props) => {
                         </Link>
                     </motion.div>
                 </div>
-            </motion.nav>
+            </nav>
+
+            {/* Mobile and Tablet Navbar */}
+            <div className="lg:hidden">
+                <FloatingNavbar />
+            </div>
         </div>
     );
 };
 
-export default Navbar;
+export default HeaderNavbar;

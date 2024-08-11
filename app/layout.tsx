@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
+import HeaderNavbar from "./layout/HeaderNavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="en" className="!scroll-smooth">
             <body className="bg-black">
+                <HeaderNavbar />
                 <Navbar />
                 <main className="flex-1">{children}</main>
                 <hr className="flex-1 mt-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
