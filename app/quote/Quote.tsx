@@ -87,21 +87,26 @@ const Quote = (props: Props) => {
             <div className="relative flex flex-col w-full mx-auto lg:p-4 my-20">
                 <div className="flex flex-1 justify-center items-center md:p-8 lg:p-4">
                     <form
-                        className="w-full flex flex-col items-center text-black bg-[#2A2C30] p-6 md:p-8 lg:p-4 lg:w-[50%] rounded-2xl shadow-lg"
+                        className="w-full flex flex-col items-center text-black font-semibold p-6 md:p-8 lg:p-8 xl:max-w-[65%] lg:w-[70%] rounded-2xl shadow-lg"
                         onSubmit={handleSubmit}
+                        style={{
+                            minHeight: "100vh",
+                            background:
+                                "linear-gradient(to top right, rgba(3,3,3,0.8), rgba(35,42,52,0.8))",
+                        }}
                     >
-                        <h1 className="text-white font-bold text-3xl sm:text-4xl mb-6 text-center">
+                        <h1 className="text-white font-semibold text-3xl sm:text-4xl mb-6 text-center">
                             REQUEST A QUOTE
                         </h1>
-                        <p className="text-white">
+                        <p className="text-white max-w-[70%] text-center mb-8">
                             Tell us about what you need and we will get back to
                             you with a quote via the email provided.
                         </p>
                         <div className="flex flex-row w-full">
-                            <div className="flex flex-col">
+                            <div className="flex flex-col gap-8">
                                 <input
                                     aria-label="First Name"
-                                    className="h-14 px-4 rounded-lg mb-4 w-full text-xl"
+                                    className="h-14 px-4 rounded-lg w-full text-xl"
                                     name="firstName"
                                     type="text"
                                     required
@@ -109,7 +114,7 @@ const Quote = (props: Props) => {
                                 />
                                 <input
                                     aria-label="Last Name"
-                                    className="h-14 px-4 rounded-lg mb-4 w-full text-xl"
+                                    className="h-14 px-4 rounded-lg w-full text-xl"
                                     name="lastName"
                                     type="text"
                                     required
@@ -117,7 +122,7 @@ const Quote = (props: Props) => {
                                 />
                                 <input
                                     aria-label="Company Name"
-                                    className="h-14 px-4 rounded-lg mb-4 w-full text-xl"
+                                    className="h-14 px-4 rounded-lg w-full text-xl"
                                     name="companyName"
                                     type="text"
                                     required
@@ -125,7 +130,7 @@ const Quote = (props: Props) => {
                                 />
                                 <input
                                     aria-label="Email"
-                                    className="h-14 px-4 rounded-lg mb-4 w-full text-xl"
+                                    className="h-14 px-4 rounded-lg w-full text-xl"
                                     name="email"
                                     type="email"
                                     required
@@ -133,7 +138,7 @@ const Quote = (props: Props) => {
                                 />
                                 <input
                                     aria-label="Phone Number"
-                                    className="h-14 px-4 rounded-lg mb-4 w-full text-xl"
+                                    className="h-14 px-4 rounded-lg w-full text-xl mb-8"
                                     name="phoneNumber"
                                     type="tel"
                                     required
@@ -142,11 +147,11 @@ const Quote = (props: Props) => {
                             </div>
                             <div className="flex flex-col">
                                 <div className="w-full mb-4 ml-8">
-                                    <h2 className="text-white text-xl mb-2">
+                                    <h2 className="text-white text-xl mb-2 font-medium">
                                         Testing Selection:
                                     </h2>
-                                    <div className="flex flex-col items-start mb-2">
-                                        <div className="flex-row mb-4">
+                                    <div className="flex flex-col items-start gap-3">
+                                        <div className="flex-row">
                                             <input
                                                 type="checkbox"
                                                 id="PenetrationTesting"
@@ -162,7 +167,7 @@ const Quote = (props: Props) => {
                                             />
                                             <label
                                                 htmlFor="PenetrationTesting"
-                                                className="text-white"
+                                                className="text-white font-semibold text-lg"
                                             >
                                                 Penetration Testing
                                             </label>
@@ -175,9 +180,9 @@ const Quote = (props: Props) => {
                                                         : "opacity-0 max-h-0"
                                                 } overflow-hidden`}
                                             >
-                                                <div className="mt-2">
+                                                <div className="flex flex-row">
                                                     <div className="grid">
-                                                        <div className="grid grid-cols-2 gap-2 p-2">
+                                                        <div className="grid grid-cols-2 gap-2">
                                                             <div>
                                                                 <input
                                                                     id="internal"
@@ -194,9 +199,9 @@ const Quote = (props: Props) => {
                                                                 />
                                                                 <label
                                                                     htmlFor="internal"
-                                                                    className={`text-white block cursor-pointer rounded-xl p-2 text-center ${
+                                                                    className={`text-white font-bold block cursor-pointer border-[1px] rounded border-[rgba(255,255,255,0.5)] hover:border-white px-[2px] text-center ${
                                                                         internalSelected
-                                                                            ? "bg-blue-500"
+                                                                            ? "bg-[rgba(255,255,255,0.5)]"
                                                                             : "bg-transparent"
                                                                     }`}
                                                                 >
@@ -219,9 +224,9 @@ const Quote = (props: Props) => {
                                                                 />
                                                                 <label
                                                                     htmlFor="external"
-                                                                    className={`text-white block cursor-pointer rounded-xl p-2 text-center ${
+                                                                    className={`text-white font-bold block cursor-pointer border-[1px] rounded border-[rgba(255,255,255,0.5)] hover:border-white px-[2px] text-center ${
                                                                         externalSelected
-                                                                            ? "bg-blue-500"
+                                                                            ? "bg-[rgba(255,255,255,0.5)]"
                                                                             : "bg-transparent"
                                                                     }`}
                                                                 >
@@ -233,7 +238,7 @@ const Quote = (props: Props) => {
 
                                                     <label
                                                         htmlFor="IPCount"
-                                                        className="text-white"
+                                                        className="text-white font-semibold ml-4"
                                                     >
                                                         IP Count:
                                                     </label>
@@ -252,7 +257,7 @@ const Quote = (props: Props) => {
                                             </div>
                                         </div>
 
-                                        <div className="flex-row mb-4">
+                                        <div className="flex-row">
                                             <input
                                                 type="checkbox"
                                                 id="WebApplicationTesting"
@@ -268,7 +273,7 @@ const Quote = (props: Props) => {
                                             />
                                             <label
                                                 htmlFor="WebApplicationTesting"
-                                                className="text-white"
+                                                className="text-white font-semibold text-lg"
                                             >
                                                 Web Application Testing
                                             </label>
@@ -281,10 +286,10 @@ const Quote = (props: Props) => {
                                                         : "opacity-0 max-h-0"
                                                 } overflow-hidden`}
                                             >
-                                                <div className="mt-2">
+                                                <div className="">
                                                     <label
                                                         htmlFor="numApplications"
-                                                        className="text-white"
+                                                        className="text-white font-semibold"
                                                     >
                                                         Page/App/Integration
                                                         Count:
@@ -307,7 +312,7 @@ const Quote = (props: Props) => {
                                             </div>
                                         </div>
 
-                                        <div className="flex-row mb-4">
+                                        <div className="flex-row">
                                             <input
                                                 type="checkbox"
                                                 id="WirelessTesting"
@@ -323,7 +328,7 @@ const Quote = (props: Props) => {
                                             />
                                             <label
                                                 htmlFor="WirelessTesting"
-                                                className="text-white"
+                                                className="text-white font-semibold text-lg"
                                             >
                                                 Wireless Testing
                                             </label>
@@ -336,10 +341,10 @@ const Quote = (props: Props) => {
                                                         : "opacity-0 max-h-0"
                                                 } overflow-hidden`}
                                             >
-                                                <div className="mt-2">
+                                                <div className="">
                                                     <label
                                                         htmlFor="numLocations"
-                                                        className="text-white"
+                                                        className="text-white font-semibold"
                                                     >
                                                         Number of Locations:
                                                     </label>
@@ -360,7 +365,7 @@ const Quote = (props: Props) => {
                                             </div>
                                         </div>
 
-                                        <div className="flex-row mb-4">
+                                        <div className="flex-row">
                                             <input
                                                 type="checkbox"
                                                 name="SecurityConsulting"
@@ -377,13 +382,13 @@ const Quote = (props: Props) => {
                                             />
                                             <label
                                                 htmlFor="SecurityConsulting"
-                                                className="text-white"
+                                                className="text-white font-semibold text-lg"
                                             >
                                                 Security Consulting
                                             </label>
                                         </div>
 
-                                        <div className="flex-row mb-4">
+                                        <div className="flex-row">
                                             <input
                                                 type="checkbox"
                                                 id="SecurityAssessment"
@@ -399,7 +404,7 @@ const Quote = (props: Props) => {
                                             />
                                             <label
                                                 htmlFor="SecurityAssessment"
-                                                className="text-white"
+                                                className="text-white font-semibold text-lg"
                                             >
                                                 Security Assessment
                                             </label>
@@ -412,10 +417,10 @@ const Quote = (props: Props) => {
                                                         : "opacity-0 max-h-0"
                                                 } overflow-hidden`}
                                             >
-                                                <div className="mt-2">
+                                                <div className="">
                                                     <label
                                                         htmlFor="numEmployees"
-                                                        className="text-white"
+                                                        className="text-white font-semibold"
                                                     >
                                                         Number of People in Org:
                                                     </label>
@@ -436,7 +441,7 @@ const Quote = (props: Props) => {
                                             </div>
                                         </div>
 
-                                        <div className="flex-row mb-4">
+                                        <div className="flex-row">
                                             <input
                                                 type="checkbox"
                                                 id="Other"
@@ -450,7 +455,7 @@ const Quote = (props: Props) => {
                                             />
                                             <label
                                                 htmlFor="Other"
-                                                className="text-white"
+                                                className="text-white font-semibold text-lg"
                                             >
                                                 Other
                                             </label>
@@ -463,7 +468,7 @@ const Quote = (props: Props) => {
                                                         : "opacity-0 max-h-0"
                                                 } overflow-hidden`}
                                             >
-                                                <p className="text-white mt-2">
+                                                <p className="text-white font-semibold">
                                                     (Describe in "More Details"
                                                     Section)
                                                 </p>
