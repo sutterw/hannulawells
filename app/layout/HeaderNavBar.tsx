@@ -1,13 +1,19 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import FloatingNavbar from "./FloatingNavBar";
+import Quote from "../quote/Quote";
 
 type Props = {};
 
 const HeaderNavbar = (props: Props) => {
+    const [showQuote, setShowQuote] = useState(false);
+
+    const handleGetQuoteClick = () => setShowQuote(true);
+    const handleQuoteClose = () => setShowQuote(false);
+
     return (
         <div>
             {/* Desktop Navbar */}
@@ -59,8 +65,8 @@ const HeaderNavbar = (props: Props) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
                     >
-                        <Link
-                            href={"/quote"}
+                        <button
+                            onClick={handleGetQuoteClick}
                             className={`
                                 relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
                                 border-white px-4 py-2 font-semibold text-white transition-all duration-500
@@ -74,7 +80,7 @@ const HeaderNavbar = (props: Props) => {
                             `}
                         >
                             <span>GET A QUOTE</span>
-                        </Link>
+                        </button>
                     </motion.div>
                 </div>
             </nav>
@@ -83,6 +89,21 @@ const HeaderNavbar = (props: Props) => {
             <div className="lg:hidden">
                 <FloatingNavbar />
             </div>
+
+            {/* Get a Quote Component */}
+            <AnimatePresence>
+                {showQuote && (
+                    <motion.div
+                        className="fixed inset-0 z-50 flex items-center justify-center"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 50 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <Quote close={handleQuoteClose} />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

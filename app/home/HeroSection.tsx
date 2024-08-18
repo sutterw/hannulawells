@@ -28,7 +28,7 @@ const HeroSection = (props: Props) => {
                     <span className="text-white opacity-65">People</span> first.
                 </motion.h1>
                 <motion.h1
-                    className="font-raleway text-[3.3rem] font-bold mt-3 text-white"
+                    className="font-raleway text-[3.3rem] font-bold text-white"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 0.65, y: 0 }}
                     transition={{ delay: 2, duration: 1 }}
@@ -43,7 +43,7 @@ const HeroSection = (props: Props) => {
                     <Image
                         src="/logo.png"
                         alt="HannulaWells logo"
-                        className="mx-auto mt-12 mb-4"
+                        className="mx-auto mt-8 mb-4"
                         width={150}
                         height={146}
                     />

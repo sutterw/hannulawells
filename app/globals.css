@@ -44,4 +44,72 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+
+    .gradient-border {
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .gradient-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1rem;
+        padding: 1px;
+        background: linear-gradient(
+            135deg,
+            rgba(144, 144, 144, 1),
+            rgba(255, 255, 255, 0) 10%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(144, 144, 144, 1)
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .gradient-border > * {
+        z-index: 1;
+    }
+
+    .x-gradient-border {
+        border-radius: 50px;
+        overflow: hidden;
+    }
+
+    .x-gradient-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        padding: 1px;
+        background: linear-gradient(
+            135deg,
+            rgba(205, 205, 205, 0.5),
+            rgba(115, 115, 115, 0.19) 10%,
+            rgba(110, 110, 110, 0.28) 50%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(194, 194, 194, 0.5)
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .x-gradient-border > * {
+        z-index: 1;
+    }
 }
