@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { sendQuoteEmail } from "../../actions/sendQuoteEmail";
 import SubmitBtn from "../contact/submitButton";
 import toast from "react-hot-toast";
+import QuoteButn from "./quoteButton";
 
 type Props = { close: () => void };
 
@@ -506,7 +507,7 @@ const Quote = ({ close }: Props) => {
                             maxLength={5000}
                         />
                     </div>
-                    <SubmitBtn />
+                    <QuoteButn />
                 </form>
             </motion.div>
         )
