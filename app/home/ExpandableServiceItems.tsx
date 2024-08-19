@@ -33,7 +33,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                     ? {
                           position: "absolute",
                           width: "100%",
-                          height: "14rem",
+                          height: "12rem",
                           display: "flex",
                           flexDirection: "row",
                           borderColor: "rgba(45,45,45,1)",
@@ -57,8 +57,8 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                           maxHeight: "10rem",
                           height: "100%",
                           width: "100%",
-                          minHeight: "14rem",
-                          minWidth: "14rem",
+                          minHeight: "12rem",
+                          minWidth: "12rem",
                           borderColor: "rgba(45,45,45,1)",
                           boxShadow: isHovered
                               ? "0px 0px 30px 0px rgba(157,196,255,0.30)"
@@ -94,7 +94,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                         marginBottom: ".5rem",
                         background: "none",
                         color: "white",
-                        width: "9rem",
+                        width: "12rem",
                     }}
                     layout="position"
                 >

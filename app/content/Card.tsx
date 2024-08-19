@@ -1,13 +1,15 @@
 import React from "react";
+import Link from "next/link";
 
 type CardProps = {
     image: string;
     title: string;
     description: string;
     author: string;
+    link: string;
 };
 
-const Card = ({ image, title, description, author }: CardProps) => {
+const Card = ({ image, title, description, author, link }: CardProps) => {
     return (
         <div className="card w-full sm:w-96 h-[32rem] rounded-lg p-6 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
             <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -25,9 +27,13 @@ const Card = ({ image, title, description, author }: CardProps) => {
                         <p className="tracking-wide text-base mt-4">
                             {description}
                         </p>
-                        <button className="mt-6 py-2 px-4 outline-none border-none rounded bg-white text-black font-bold cursor-pointer transition-colors duration-400 hover:bg-blue-500 hover:text-white">
+                        <a
+                            href={link}
+                            target="_blank"
+                            className="mt-6 py-2 px-4 outline-none border-none rounded bg-white text-black font-bold cursor-pointer transition-colors duration-400 hover:bg-blue-500 hover:text-white"
+                        >
                             Read More
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div className="mt-auto">

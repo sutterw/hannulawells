@@ -27,14 +27,11 @@ const ServicesSection = () => {
 
     return (
         <section id="our-services" className="flex flex-col">
-            <div className="grid md:grid-cols-2">
-                {/* Your existing top section */}
-            </div>
-            <div className="flex flex-col items-center">
-                <h1 className="text-white my-12 text-6xl font-semibold">
+            <div className="flex flex-col items-center mb-12">
+                <h1 className="text-white mt-12 mb-4 text-6xl font-semibold">
                     Our Services
                 </h1>
-                <p className="text-gray-300 text-2xl">
+                <p className="text-gray-300 text-2xl text-center">
                     We provide a wide range of services to keep you safe.
                 </p>
             </div>
@@ -44,7 +41,7 @@ const ServicesSection = () => {
                     <span className="text-white text-3xl">Testing</span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
-                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%]">
+                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {testingData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}
@@ -66,7 +63,7 @@ const ServicesSection = () => {
                     </span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
-                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%]">
+                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {securityConsultingData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}
@@ -88,7 +85,7 @@ const ServicesSection = () => {
                     </span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
-                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%]">
+                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {technologySolutionsData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}
