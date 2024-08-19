@@ -8,13 +8,7 @@ export default function Home() {
     return (
         <div className="flex flex-col">
             <Hero />
-            <div
-                style={{
-                    backgroundImage: "url('/gradientbackground.svg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
+            <div className="bg-custom-radial">
                 <PeopleMatter />
                 <HackersNeverStop />
             </div>

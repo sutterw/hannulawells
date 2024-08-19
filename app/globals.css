@@ -45,6 +45,22 @@ body {
         text-wrap: balance;
     }
 
+    .service-gradient-bg {
+        background: linear-gradient(
+            173deg,
+            rgba(3, 3, 3, 1) 10.67%,
+            rgba(20, 23, 28, 1) 61.79%
+        );
+    }
+
+    .bg-custom-radial {
+        background: radial-gradient(
+            41.97% 92.57% at 114.1% -30.16%,
+            #232a34 20%,
+            #030303 200%
+        );
+    }
+
     .gradient-border {
         border-radius: 1rem;
         overflow: hidden;

@@ -59,7 +59,11 @@ const Navbar = (props: Props) => {
             <motion.nav
                 className={`hidden lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4 transition-all duration-500 ${
                     showNavbar ? "translate-y-0" : "-translate-y-full"
-                } ${showNavbar ? "bg-black bg-opacity-60" : "bg-transparent"}`}
+                } ${
+                    showNavbar
+                        ? "bg-black bg-opacity-60 backdrop-blur-[3px]"
+                        : "bg-transparent"
+                }`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
