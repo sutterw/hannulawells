@@ -22,6 +22,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
     onClick,
 }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
     return (
         <motion.li
@@ -57,8 +58,8 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                           maxHeight: "10rem",
                           height: "100%",
                           width: "100%",
-                          minHeight: "12rem",
-                          minWidth: "12rem",
+                          minHeight: isMobile ? "9rem" : "12rem",
+                          minWidth: isMobile ? "9rem" : "12rem",
                           borderColor: "rgba(45,45,45,1)",
                           boxShadow: isHovered
                               ? "0px 0px 30px 0px rgba(157,196,255,0.30)"
@@ -88,13 +89,13 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                 />
                 <motion.h2
                     style={{
-                        fontSize: "1.3rem",
+                        fontSize: isMobile ? "1rem" : "1.3rem",
                         lineHeight: "2rem",
                         marginTop: ".5rem",
                         marginBottom: ".5rem",
                         background: "none",
                         color: "white",
-                        width: "12rem",
+                        width: isMobile ? "9rem" : "12rem",
                     }}
                     layout="position"
                 >

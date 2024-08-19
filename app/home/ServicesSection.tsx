@@ -39,8 +39,12 @@ const ServicesSection = () => {
         index: number;
     } | null>(null);
 
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+
     const handleExpand = (section: string, index: number) => {
-        if (
+        if (isMobile) {
+            window.location.href = "/services";
+        } else if (
             expandedItem?.section === section &&
             expandedItem?.index === index
         ) {
@@ -66,7 +70,7 @@ const ServicesSection = () => {
                     <span className="text-white text-3xl">Testing</span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
-                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
+                <ul className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {testingData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}
@@ -88,7 +92,7 @@ const ServicesSection = () => {
                     </span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
-                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
+                <ul className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {securityConsultingData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}
@@ -110,7 +114,7 @@ const ServicesSection = () => {
                     </span>
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
-                <ul className="relative grid md:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
+                <ul className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {technologySolutionsData.map((service, index) => (
                         <ExpandableServiceItem
                             key={index}

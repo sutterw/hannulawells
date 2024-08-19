@@ -2,7 +2,6 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { sendQuoteEmail } from "../../actions/sendQuoteEmail";
-import SubmitBtn from "../contact/submitButton";
 import toast from "react-hot-toast";
 import QuoteButn from "./quoteButton";
 
@@ -106,16 +105,16 @@ const Quote = ({ close }: Props) => {
                 animate={{ opacity: isVisible ? 1 : 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="hidden lg:flex relative items-center justify-center p-4 font-raleway"
+                className="flex relative items-center justify-center p-4 font-raleway"
             >
                 <form
-                    className="w-full flex flex-col items-center text-black font-semibold p-6 md:p-8 lg:p-8 gradient-border bg-gradient-to-br from-[rgba(35,42,52,0.8)] to-[rgba(3,3,3,0.8)] shadow-[2px_2px_30px_0px_rgba(0,0,0,0.25),_0px_0px_2px_2px_rgba(255,255,255,0.1)] backdrop-blur-[60px]"
+                    className="w-full flex flex-col mt-28 lg:mt-0 items-center text-black font-semibold p-6 md:p-8 lg:p-8 gradient-border bg-gradient-to-br from-[rgba(35,42,52,0.8)] to-[rgba(3,3,3,0.8)] shadow-[2px_2px_30px_0px_rgba(0,0,0,0.25),_0px_0px_2px_2px_rgba(255,255,255,0.1)] backdrop-blur-[60px]"
                     onSubmit={handleSubmit}
                 >
                     <button
                         type="button"
                         onClick={handleClose}
-                        className="absolute group top-4 right-4 rounded-[50px] text-[rgba(255,255,255,0.9)] x-gradient-border bg-[rgba(35,42,52,0.5)] shadow-[2px_2px_30px_0px_rgba(0,0,0,0.25),_0px_0px_2px_2px_rgba(255,255,255,0.1)] backdrop-blur-[60px] w-20 h-20 flex-shrink-0 transition-all duration-100 hover:bg-[rgba(22,22,22,0.6)]"
+                        className="absolute hidden lg:block group top-4 right-4 rounded-[50px] text-[rgba(255,255,255,0.9)] x-gradient-border bg-[rgba(35,42,52,0.5)] shadow-[2px_2px_30px_0px_rgba(0,0,0,0.25),_0px_0px_2px_2px_rgba(255,255,255,0.1)] backdrop-blur-[60px] w-20 h-20 flex-shrink-0 transition-all duration-100 hover:bg-[rgba(22,22,22,0.6)]"
                     >
                         <img
                             src="x.svg"
@@ -131,7 +130,7 @@ const Quote = ({ close }: Props) => {
                         Tell us about what you need and we will get back to you
                         with a quote via the email provided.
                     </p>
-                    <div className="flex flex-row w-full">
+                    <div className="flex flex-col md:flex-row w-full">
                         <div className="flex flex-col gap-4">
                             <input
                                 aria-label="First Name"
