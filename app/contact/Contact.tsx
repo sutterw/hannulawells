@@ -11,7 +11,7 @@ const Contact = (props: Props) => {
         <div className="relative flex items-center justify-center min-h-screen text-white p-4">
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/working.png')" }}
+                style={{ backgroundImage: "url('/working.svg')" }}
             >
                 <div className="absolute inset-x-0 top-0 h-1/6 bg-gradient-to-b from-black to-transparent"></div>
                 <div className="absolute inset-x-0 bottom-0 h-1/6 bg-gradient-to-t from-black to-transparent"></div>

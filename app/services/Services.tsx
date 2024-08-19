@@ -18,13 +18,13 @@ const Services = () => {
         <div className="flex flex-col">
             <section
                 id="services-hero"
-                className="gap-8 lg:gap-12 flex flex-col justify-center min-h-screen p-4"
-                style={{
-                    backgroundImage: "url('/gradientbackground.svg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
+                className="gap-8 lg:gap-12 flex flex-col p-4 bg-black min-h-screen items-center justify-center"
             >
+                <div className="relative w-full max-w-[60%] z-10">
+                    <div className="absolute top-10 -left-40 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                    <div className="absolute top-0 -right-40 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                    <div className="absolute -bottom-80 left-20 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>{" "}
+                </div>
                 <h1 className="text-white text-[3rem] leading-[2.75rem]  sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-8xl font-medium text-center">
                     Professional Services
                 </h1>
@@ -77,7 +77,7 @@ const Services = () => {
                             {testingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 bg-black bg-opacity-70 gradient-border"
+                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border"
                                 >
                                     <img
                                         src={item.img}
@@ -114,7 +114,7 @@ const Services = () => {
                             {securityConsultingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 bg-black bg-opacity-70 gradient-border"
+                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background-reversed gradient-border"
                                 >
                                     <img
                                         src={item.img}
@@ -151,7 +151,7 @@ const Services = () => {
                             {technologySolutionsData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 bg-black bg-opacity-70 gradient-border"
+                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border"
                                 >
                                     <img
                                         src={item.img}

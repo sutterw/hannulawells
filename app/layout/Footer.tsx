@@ -12,7 +12,10 @@ const Footer = (props: Props) => {
                 <p>+1 (805) 305-8773</p>
             </div>
             <div className="flex flex-row gap-4 mt-4 md:mt-0">
-                <a href="https://www.linkedin.com/company/hannulawells/">
+                <a
+                    href="https://www.linkedin.com/company/hannulawells/"
+                    target="_blank"
+                >
                     <Image
                         src="/linkedin.png"
                         alt="LinkedIn"
@@ -20,7 +23,10 @@ const Footer = (props: Props) => {
                         height={35}
                     />
                 </a>
-                <a href="https://www.instagram.com/hannulawells/">
+                <a
+                    href="https://www.instagram.com/hannulawells/"
+                    target="_blank"
+                >
                     <Image
                         src="/instagram.png"
                         alt="Instagram"

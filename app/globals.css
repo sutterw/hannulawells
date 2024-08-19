@@ -41,6 +41,13 @@ body {
 }
 
 @layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+
     .text-balance {
         text-wrap: balance;
     }
@@ -51,6 +58,30 @@ body {
             rgba(3, 3, 3, 1) 10.67%,
             rgba(20, 23, 28, 1) 61.79%
         );
+    }
+
+    .services-background {
+        opacity: 0.9;
+        background: linear-gradient(
+            108deg,
+            rgba(3, 3, 3, 0.8) 6.27%,
+            rgba(35, 42, 52, 0.8) 93.58%
+        );
+        box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25),
+            0px 0px 2px 2px rgba(255, 255, 255, 0.1) inset;
+        backdrop-filter: blur(60px);
+    }
+
+    .services-background-reversed {
+        opacity: 0.9;
+        background: linear-gradient(
+            76deg,
+            rgba(35, 42, 52, 0.8) 0.11%,
+            rgba(3, 3, 3, 0.8) 96.48%
+        );
+        box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25),
+            0px 0px 2px 2px rgba(255, 255, 255, 0.1) inset;
+        backdrop-filter: blur(60px);
     }
 
     .bg-custom-radial {
