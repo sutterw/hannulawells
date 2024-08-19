@@ -20,10 +20,10 @@ const Services = () => {
                 id="services-hero"
                 className="gap-8 lg:gap-12 flex flex-col p-4 bg-black min-h-screen items-center justify-center"
             >
-                <div className="relative w-full max-w-[60%] z-10">
-                    <div className="absolute top-10 -left-40 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                    <div className="absolute top-0 -right-40 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                    <div className="absolute -bottom-80 left-20 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>{" "}
+                <div className="relative w-full hidden md:flex md:max-w-[60%] z-10">
+                    <div className="absolute top-[18.5rem] -left-40 w-[30rem] h-[30rem] bg-[rgba(157,196,255,1)] rounded-full mix-blend-multiply filter blur-[70px] opacity-20 animate-blob"></div>
+                    <div className="absolute top-0 -right-20 w-[30rem] h-[30rem] bg-[rgba(157,196,255,1)] rounded-full mix-blend-multiply filter blur-[70px] opacity-20 animate-blob animation-delay-2000"></div>
+                    <div className="absolute -bottom-16 left-20 w-[30rem] h-[30rem] bg-[rgba(157,196,255,1)] rounded-full mix-blend-multiply filter blur-[70px] opacity-20 animate-blob animation-delay-4000"></div>{" "}
                 </div>
                 <h1 className="text-white text-[3rem] leading-[2.75rem]  sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-8xl font-medium text-center">
                     Professional Services
@@ -33,7 +33,7 @@ const Services = () => {
                     to meet your organizational needs.
                 </p>
                 <ul className="text-white flex flex-col flex-wrap items-center md:justify-center gap-6 md:flex-row md:gap-5">
-                    <li>
+                    <li className="z-20">
                         <a
                             href="#services-testing"
                             className="rounded-lg px-3 sm:px-4 py-2 text-xl sm:text-2xl lg:text-3xl bg-white bg-opacity-15 hover:text-black hover:bg-white hover:bg-opacity-80 transition duration-700"
@@ -41,7 +41,7 @@ const Services = () => {
                             Testing
                         </a>
                     </li>
-                    <li>
+                    <li className="z-20">
                         <a
                             href="#security-consulting"
                             className="rounded-lg px-3 sm:px-4 py-2 text-xl sm:text-2xl lg:text-3xl bg-white bg-opacity-15 hover:text-black hover:bg-white hover:bg-opacity-80 transition duration-700"
@@ -49,7 +49,7 @@ const Services = () => {
                             Security Consulting
                         </a>
                     </li>
-                    <li>
+                    <li className="z-20">
                         <a
                             href="#technology-solutions"
                             className="rounded-lg px-3 sm:px-4 py-2 text-xl sm:text-2xl lg:text-3xl bg-white bg-opacity-15 hover:text-black hover:bg-white hover:bg-opacity-80 transition duration-700"

@@ -75,26 +75,57 @@ export default function QuoteFormEmail({
                             <Head className="font-bold">
                                 Penetration Testing
                             </Head>
-                            <Text>IP Count: {IPCount}</Text>
+                            {IPCount ? (
+                                <Text>IP Count: {IPCount}</Text>
+                            ) : (
+                                <Text>No IP Count provided</Text>
+                            )}
                             <Hr />
                             <Head className="font-bold">
                                 Web Application Testing
                             </Head>
                             <Text>
                                 Number of Pages/Applications/Integrations:{" "}
-                                {numApplications}
+                                {numApplications ? (
+                                    <Text>
+                                        Number of
+                                        Applications/Pages/Integrations:{" "}
+                                        {numApplications}
+                                    </Text>
+                                ) : (
+                                    <Text>
+                                        No amount of
+                                        Applications/Pages/Integrations provided
+                                    </Text>
+                                )}
                             </Text>
                             <Hr />
                             <Head className="font-bold">Wireless Testing</Head>
-                            <Text>Number of Locations: {numLocations}</Text>
+                            {numLocations ? (
+                                <Text>
+                                    Number of Locations: {numApplications}
+                                </Text>
+                            ) : (
+                                <Text>No amount of locations provided</Text>
+                            )}
+
                             <Hr />
                             <Head className="font-bold">
                                 Security Assessment
                             </Head>
-                            <Text>Number of People in Org: {numEmployees}</Text>
+                            {numEmployees ? (
+                                <Text>Number of Employees: {numEmployees}</Text>
+                            ) : (
+                                <Text>No amount of employees provided</Text>
+                            )}
+
                             <Hr />
                             <Head className="font-bold">Other Details</Head>
-                            <Text>{message}</Text>
+                            {message ? (
+                                <Text>Message: {message}</Text>
+                            ) : (
+                                <Text>No additional details provided</Text>
+                            )}
                         </Section>
                     </Container>
                 </Body>

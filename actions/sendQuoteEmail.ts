@@ -38,31 +38,34 @@ export const sendQuoteEmail = async (quoteData: FormData) => {
     const message = getString("message");
 
     // Simple server-side validation
-    if (!validateString(firstName, 100) || !validateString(lastName, 100)) {
+    if (
+        (firstName && !validateString(firstName, 100)) ||
+        (lastName && !validateString(lastName, 100))
+    ) {
         return { error: "Invalid name" };
     }
-    if (!validateString(email, 500)) {
+    if (email && !validateString(email, 500)) {
         return { error: "Invalid email" };
     }
-    if (!validateString(phoneNumber, 100)) {
+    if (phoneNumber && !validateString(phoneNumber, 100)) {
         return { error: "Invalid phone number" };
     }
-    if (!validateString(companyName, 100)) {
+    if (companyName && !validateString(companyName, 100)) {
         return { error: "Invalid company name" };
     }
-    if (!validateString(IPCount, 100)) {
+    if (IPCount && !validateString(IPCount, 100)) {
         return { error: "Invalid IP count" };
     }
-    if (!validateString(numEmployees, 10000)) {
+    if (numEmployees && !validateString(numEmployees, 10000)) {
         return { error: "Invalid employee count" };
     }
-    if (!validateString(numLocations, 1000)) {
+    if (numLocations && !validateString(numLocations, 1000)) {
         return { error: "Invalid location count" };
     }
-    if (!validateString(numApplications, 10000)) {
+    if (numApplications && !validateString(numApplications, 10000)) {
         return { error: "Invalid application count" };
     }
-    if (!validateString(message, 5000)) {
+    if (message && !validateString(message, 5000)) {
         return { error: "Invalid message" };
     }
 

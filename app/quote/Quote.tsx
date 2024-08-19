@@ -72,10 +72,16 @@ const Quote = ({ close }: Props) => {
 
         // Collect additional data from state
         quoteData.append("selectedTests", JSON.stringify(selectedTests));
-        quoteData.append("numEmployees", numEmployees.toString());
-        quoteData.append("numLocations", numLocations.toString());
-        quoteData.append("numApplications", numApplications.toString());
-        quoteData.append("IPCount", IPCount.toString());
+
+        // Append only if the values are not empty
+        if (numEmployees)
+            quoteData.append("numEmployees", numEmployees.toString());
+        if (numLocations)
+            quoteData.append("numLocations", numLocations.toString());
+        if (numApplications)
+            quoteData.append("numApplications", numApplications.toString());
+        if (IPCount) quoteData.append("IPCount", IPCount.toString());
+
         quoteData.append("internalSelected", internalSelected.toString());
         quoteData.append("externalSelected", externalSelected.toString());
 
