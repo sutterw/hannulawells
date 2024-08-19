@@ -1,8 +1,36 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 const HackersNeverStop = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLOptionElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect(); // Stop observing after the element is in view
+                }
+            },
+            { threshold: 0.1 } // Adjust threshold as needed
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
     return (
-        <section className="flex justify-center w-full h-auto my-[15%] relative">
+        <section
+            ref={sectionRef}
+            className="flex justify-center w-full h-auto my-[15%] relative"
+        >
             <h1 className="absolute z-10 left-[27%] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] 2xl:text-[4rem] text-white">
                 Hackers. Never. Stop.
             </h1>
@@ -21,7 +49,9 @@ const HackersNeverStop = () => {
             <img
                 src="/hackerstats.svg"
                 alt="hacker statistics by hannulawells"
-                className="absolute right-[5%] lg:right-[8%] w-[25%]"
+                className={`absolute right-[5%] lg:right-[8%] w-[25%] ${
+                    isVisible ? "fade-from-right" : ""
+                }`}
             />
         </section>
     );

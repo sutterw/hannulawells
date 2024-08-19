@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ExpandableServiceItem from "./ExpandableServiceItems";
 import {
@@ -9,6 +9,31 @@ import {
 } from "../../lib/data";
 
 const ServicesSection = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLOptionElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect(); // Stop observing after the element is in view
+                }
+            },
+            { threshold: 0.1 } // Adjust threshold as needed
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
     const [expandedItem, setExpandedItem] = useState<{
         section: string;
         index: number;
@@ -26,7 +51,7 @@ const ServicesSection = () => {
     };
 
     return (
-        <section id="our-services" className="flex flex-col">
+        <section id="our-services" className="flex flex-col" ref={sectionRef}>
             <div className="flex flex-col items-center mb-12">
                 <h1 className="text-white mt-12 mb-4 text-6xl font-semibold">
                     Our Services
@@ -35,7 +60,7 @@ const ServicesSection = () => {
                     We provide a wide range of services to keep you safe.
                 </p>
             </div>
-            <div className="mx-[5%]">
+            <div className={`mx-[5%] ${isVisible ? "fade-in" : ""}`}>
                 <div className="flex flex-row gap-4 mx-24 items-center">
                     <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                     <span className="text-white text-3xl">Testing</span>

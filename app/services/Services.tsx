@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import {
     testingData,
     securityConsultingData,
@@ -6,6 +7,30 @@ import {
 } from "../../lib/data";
 
 const Services = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLOptionElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect(); // Stop observing after the element is in view
+                }
+            },
+            { threshold: 0.1 } // Adjust threshold as needed
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
     // Scroll to top handler
     const scrollToTop = () => {
         window.scrollTo({
@@ -15,7 +40,7 @@ const Services = () => {
     };
 
     return (
-        <div className="flex flex-col">
+        <section className="flex flex-col">
             <section
                 id="services-hero"
                 className="gap-8 lg:gap-12 flex flex-col p-4 bg-black min-h-screen items-center justify-center"
@@ -59,7 +84,7 @@ const Services = () => {
                     </li>
                 </ul>
             </section>
-            <section id="services-testing" className="w-full">
+            <section id="services-testing" className="w-full" ref={sectionRef}>
                 <div
                     className="relative mx-auto text-white w-full"
                     style={{
@@ -77,7 +102,9 @@ const Services = () => {
                             {testingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border"
+                                    className={`relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border ${
+                                        isVisible ? "fade-in" : ""
+                                    }`}
                                 >
                                     <img
                                         src={item.img}
@@ -114,7 +141,9 @@ const Services = () => {
                             {securityConsultingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background-reversed gradient-border"
+                                    className={`relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background-reversed gradient-border ${
+                                        isVisible ? "fade-in" : ""
+                                    }`}
                                 >
                                     <img
                                         src={item.img}
@@ -151,7 +180,9 @@ const Services = () => {
                             {technologySolutionsData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border"
+                                    className={`relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border ${
+                                        isVisible ? "fade-in" : ""
+                                    }`}
                                 >
                                     <img
                                         src={item.img}
@@ -214,7 +245,7 @@ const Services = () => {
                     z-index: 1;
                 }
             `}</style>
-        </div>
+        </section>
     );
 };
 
