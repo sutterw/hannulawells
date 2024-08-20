@@ -11,7 +11,7 @@ const Contact = (props: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
 
     return (
-        <div className="relative flex items-center justify-center min-h-screen text-white p-4">
+        <div className="font-raleway relative flex items-center justify-center min-h-screen text-white p-4">
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: "url('/working.svg')" }}

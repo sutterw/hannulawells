@@ -12,16 +12,13 @@ export default function SubmitBtn({ isSubmitted }: SubmitBtnProps) {
     return (
         <button
             type="submit"
-            className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-[#969592] text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-[rgba(157,196,255,0.8)] hover:border-[#5F7697] active:scale-105 disabled:scale-100 disabled:bg-opacity-65"
+            className="cursor-pointer font-bold text-lg font-raleway group flex items-center justify-center gap-2 h-[3rem] w-[10rem] bg-[#969592] hover:bg-[#7C99C4] text-white border-[1px] border-[#747371] rounded-[8px] shadow-[5px_5px_5px_0_rgba(0,0,0,0.30)] transition-all focus:scale-110 hover:scale-110 hover:border-[#5F7697] active:scale-105 disabled:scale-100 disabled:bg-opacity-65"
             disabled={pending || isSubmitted}
         >
             {pending ? (
                 <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
             ) : (
-                <>
-                    {isSubmitted ? "Sent" : "Submit"}{" "}
-                    <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
-                </>
+                <>{isSubmitted ? "Sent" : "Send Message"} </>
             )}
         </button>
     );
