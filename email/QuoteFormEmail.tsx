@@ -84,21 +84,17 @@ export default function QuoteFormEmail({
                             <Head className="font-bold">
                                 Web Application Testing
                             </Head>
-                            <Text>
-                                Number of Pages/Applications/Integrations:{" "}
-                                {numApplications ? (
-                                    <Text>
-                                        Number of
-                                        Applications/Pages/Integrations:{" "}
-                                        {numApplications}
-                                    </Text>
-                                ) : (
-                                    <Text>
-                                        No amount of
-                                        Applications/Pages/Integrations provided
-                                    </Text>
-                                )}
-                            </Text>
+                            {numApplications ? (
+                                <Text>
+                                    Number of Applications/Pages/Integrations:{" "}
+                                    {numApplications}
+                                </Text>
+                            ) : (
+                                <Text>
+                                    No amount of Applications/Pages/Integrations
+                                    provided
+                                </Text>
+                            )}
                             <Hr />
                             <Head className="font-bold">Wireless Testing</Head>
                             {numLocations ? (

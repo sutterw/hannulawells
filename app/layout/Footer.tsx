@@ -5,7 +5,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
     return (
-        <footer className="p-8 mx-8 text-white flex flex-col md:flex-row justify-between items-center">
+        <footer className="font-raleway p-8 mx-8 text-white flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col md:flex-row gap-4 md:gap-16 items-center text-center md:text-left">
                 <p>© 2023 by HannulaWells</p>
                 <p>info@hannulawells.com</p>

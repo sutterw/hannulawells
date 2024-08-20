@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -22,7 +22,22 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
     onClick,
 }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add event listener to handle window resizing
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup the event listener
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <motion.li

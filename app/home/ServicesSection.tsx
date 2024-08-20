@@ -11,6 +11,11 @@ import {
 const ServicesSection = () => {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLOptionElement>(null);
+    const [expandedItem, setExpandedItem] = useState<{
+        section: string;
+        index: number;
+    } | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -34,12 +39,20 @@ const ServicesSection = () => {
         };
     }, []);
 
-    const [expandedItem, setExpandedItem] = useState<{
-        section: string;
-        index: number;
-    } | null>(null);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+        };
 
-    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+        // Initial check
+        handleResize();
+
+        // Add event listener to handle window resizing
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup the event listener
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const handleExpand = (section: string, index: number) => {
         if (isMobile) {
@@ -65,10 +78,12 @@ const ServicesSection = () => {
                 </p>
             </div>
             <div className={`mx-[5%] ${isVisible ? "fade-in" : ""}`}>
-                <div className="flex flex-row gap-4 mx-24 items-center">
-                    <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
-                    <span className="text-white text-3xl">Testing</span>
-                    <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+                <div className="flex flex-row gap-4 mx-24 items-center justify-center">
+                    <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+                    <span className="text-white text-3xl text-center">
+                        Testing
+                    </span>
+                    <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
                 <ul className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {testingData.map((service, index) => (
@@ -85,12 +100,12 @@ const ServicesSection = () => {
                         />
                     ))}
                 </ul>
-                <div className="flex flex-row gap-4 mx-24 items-center">
-                    <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
-                    <span className="text-white text-3xl">
+                <div className="flex flex-row gap-4 mx-24 items-center justify-center">
+                    <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+                    <span className="text-white text-3xl text-center">
                         Security Counseling
                     </span>
-                    <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+                    <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
                 <ul className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {securityConsultingData.map((service, index) => (
@@ -107,12 +122,12 @@ const ServicesSection = () => {
                         />
                     ))}
                 </ul>
-                <div className="flex flex-row gap-4 mx-24 items-center">
-                    <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
-                    <span className="text-white text-3xl">
+                <div className="flex flex-row gap-4 mx-24 items-center justify-center">
+                    <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+                    <span className="text-white text-3xl text-center">
                         Technology Solutions
                     </span>
-                    <hr className="flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+                    <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 </div>
                 <ul className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[10%] my-12">
                     {technologySolutionsData.map((service, index) => (

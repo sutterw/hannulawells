@@ -29,7 +29,7 @@ const HackersNeverStop = () => {
     return (
         <section
             ref={sectionRef}
-            className="flex justify-center w-full h-auto my-[15%] relative"
+            className="font-raleway flex justify-center w-full h-auto my-[15%] relative"
         >
             <h1
                 className={`absolute z-10 left-[27%] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] 2xl:text-[4rem] text-white ${

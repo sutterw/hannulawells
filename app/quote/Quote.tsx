@@ -10,6 +10,8 @@ type Props = { close: () => void };
 const Quote = ({ close }: Props) => {
     const [isVisible, setIsVisible] = useState<boolean>(true);
     const [selectedTests, setSelectedTests] = useState<string[]>([]);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const [numEmployees, setNumEmployees] = useState<number | "">(0);
     const [numLocations, setNumLocations] = useState<number | "">(0);
@@ -67,7 +69,18 @@ const Quote = ({ close }: Props) => {
     // Type for form submission
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const quoteData = new FormData(event.currentTarget);
+        setIsSubmitting(true);
+
+        const formElement = event.currentTarget;
+
+        // Ensure the form element is not null
+        if (!formElement) {
+            toast.error("Form submission failed. Please try again.");
+            setIsSubmitting(false);
+            return;
+        }
+
+        const quoteData = new FormData(formElement);
 
         // Collect additional data from state
         quoteData.append("selectedTests", JSON.stringify(selectedTests));
@@ -88,10 +101,28 @@ const Quote = ({ close }: Props) => {
 
         if (error) {
             toast.error(error);
+            setIsSubmitting(false);
             return;
         }
 
         toast.success("Quote request sent successfully!");
+        setFormSubmitted(true);
+
+        // Clear the form fields after submission
+        setSelectedTests([]);
+        setNumEmployees(0);
+        setNumLocations(0);
+        setNumApplications(0);
+        setIPCount(0);
+        setInternalSelected(false);
+        setExternalSelected(false);
+
+        // Optional: Clear the native form fields if the form element exists
+        if (formElement) {
+            formElement.reset();
+        }
+
+        setIsSubmitting(false);
     };
 
     const handleClose = () => {
@@ -512,7 +543,10 @@ const Quote = ({ close }: Props) => {
                             maxLength={5000}
                         />
                     </div>
-                    <QuoteButn />
+                    <QuoteButn
+                        isSubmitting={isSubmitting}
+                        formSubmitted={formSubmitted}
+                    />
                 </form>
             </motion.div>
         )

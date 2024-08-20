@@ -9,7 +9,7 @@ const About = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen text-white overflow-hidden">
+        <div className="relative font-raleway flex flex-col items-center justify-center min-h-screen text-white overflow-hidden">
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] ${
                     zoom ? "scale-[3]" : ""
