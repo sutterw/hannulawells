@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useRef } from "react";
 import { sendEmail } from "../../actions/sendEmails";
 import SubmitBtn from "./submitButton";
 import toast from "react-hot-toast";
@@ -7,6 +7,9 @@ import toast from "react-hot-toast";
 type Props = {};
 
 const Contact = (props: Props) => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
+
     return (
         <div className="relative flex items-center justify-center min-h-screen text-white p-4">
             <div
@@ -31,6 +34,7 @@ const Contact = (props: Props) => {
                 </div>
                 <div className="flex flex-1 justify-center lg:justify-end items-center md:p-8 lg:p-4">
                     <form
+                        ref={formRef}
                         className="w-full flex flex-col items-center text-black bg-[#2A2C30] bg-opacity-80 p-6 md:p-8 lg:p-4 lg:w-[50%] rounded-2xl shadow-lg opacity-60"
                         action={async (formData) => {
                             const { data, error } = await sendEmail(formData);
@@ -41,6 +45,10 @@ const Contact = (props: Props) => {
                             }
 
                             toast.success("Email sent successfully!");
+                            setIsSubmitted(true);
+
+                            // Reset the form fields
+                            formRef.current?.reset();
                         }}
                     >
                         <h1 className="text-white font-bold text-3xl sm:text-4xl mb-6 text-center">
@@ -81,7 +89,7 @@ const Contact = (props: Props) => {
                             required
                             maxLength={5000}
                         />
-                        <SubmitBtn />
+                        <SubmitBtn isSubmitted={isSubmitted} />
                     </form>
                 </div>
             </div>

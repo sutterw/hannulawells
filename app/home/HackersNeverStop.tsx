@@ -31,10 +31,18 @@ const HackersNeverStop = () => {
             ref={sectionRef}
             className="flex justify-center w-full h-auto my-[15%] relative"
         >
-            <h1 className="absolute z-10 left-[27%] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] 2xl:text-[4rem] text-white">
+            <h1
+                className={`absolute z-10 left-[27%] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] 2xl:text-[4rem] text-white ${
+                    isVisible ? "fade-in" : ""
+                }`}
+            >
                 Hackers. Never. Stop.
             </h1>
-            <div className="relative w-[80%] lg:w-[60%] h-auto rounded-[10%] overflow-hidden">
+            <div
+                className={`relative w-[80%] lg:w-[60%] h-auto rounded-[10%] overflow-hidden ${
+                    isVisible ? "fade-in" : ""
+                }`}
+            >
                 <video
                     preload="none"
                     autoPlay

@@ -47,19 +47,11 @@ const HeroSection = (props: Props) => {
                         width={150}
                         height={146}
                     />
-                    <p className="font-raleway text-4xl font-bold mt-4">
+                    <p className="font-raleway text-4xl font-bold mt-8">
                         Cyber Security Services
                     </p>
                 </motion.div>
-                <motion.div
-                    className="mt-10 flex gap-4 relative top-[10%]"
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        delay: 5,
-                        duration: 0.5,
-                    }}
-                >
+                <motion.div className="mt-10 flex gap-4 relative top-[10%]">
                     <Link
                         href={"/contact"}
                         className={`font-raleway text-[1.2rem]

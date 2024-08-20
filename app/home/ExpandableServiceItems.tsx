@@ -61,6 +61,9 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                           minHeight: isMobile ? "9rem" : "12rem",
                           minWidth: isMobile ? "9rem" : "12rem",
                           borderColor: "rgba(45,45,45,1)",
+                          backgroundColor: isHovered
+                              ? "#232A34"
+                              : "service-gradient-bg",
                           boxShadow: isHovered
                               ? "0px 0px 30px 0px rgba(157,196,255,0.30)"
                               : "none",

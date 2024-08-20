@@ -208,12 +208,12 @@ body {
 
 .fade-in {
     opacity: 0; /* Start hidden */
-    animation: fadeIn 3s forwards; /* Adjust duration as needed */
+    animation: fadeIn 2s forwards; /* Adjust duration as needed */
 }
 
 .fade-in-logo {
     opacity: 0; /* Start hidden */
-    animation: fadeIn 5s forwards; /* Adjust duration as needed */
+    animation: fadeIn 4s forwards; /* Adjust duration as needed */
 }
 
 @keyframes fadeFromRight {
