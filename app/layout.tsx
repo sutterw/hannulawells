@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import HeaderNavbar from "./layout/HeaderNavBar";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 <main className="flex-1">{children}</main>
                 <hr className="flex-1 mt-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
                 <Footer />
+                <Analytics />
             </body>
         </html>
     );

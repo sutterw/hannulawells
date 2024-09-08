@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const PeopleMatter = () => {
@@ -10,19 +11,21 @@ const PeopleMatter = () => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect(); // Stop observing after the element is in view
+                    observer.disconnect();
                 }
             },
-            { threshold: 0.1 } // Adjust threshold as needed
+            { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const currentRef = sectionRef.current;
+
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []);
@@ -34,7 +37,7 @@ const PeopleMatter = () => {
                 isVisible ? "fade-in" : ""
             }`}
         >
-            <img
+            <Image
                 src="/whiteW.svg"
                 alt="white hannulawells logo on homepage"
                 className={`w-[40%] lg:w-[20%] h-auto mt-32 ${
@@ -46,7 +49,7 @@ const PeopleMatter = () => {
             </h1>
             <p className="font-raleway text-center text-[1.2rem] sm:text-[1.75rem] w-[90%] md:w-[60%] leading-10 text-white opacity-85">
                 We prioritize people over technology, offering value-driven
-                cybersecurity services tailored to meet our clients' unique
+                cybersecurity services tailored to meet our clients&apos; unique
                 needs. With a client-centric approach, we strive to understand
                 your challenges and deliver comprehensive solutions to improve
                 your security posture and protect what matters most to you.

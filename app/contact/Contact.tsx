@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import { sendEmail } from "../../actions/sendEmails";
 import SubmitBtn from "./submitButton";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 type Props = {};
 
@@ -21,12 +22,12 @@ const Contact = (props: Props) => {
             </div>
             <div className="relative flex flex-col lg:flex-row lg:flex-1 lg:items-center lg:justify-between w-full mx-auto lg:p-4 my-20">
                 <div className="relative lg:absolute lg:bottom-0 lg:left-0 flex flex-col gap-4 p-[5%] lg:p-4 w-full lg:ml-[5%] mb-10 lg:mb-0 lg:w-[45%]">
-                    <img
+                    <Image
                         src="/phoneus.svg"
                         alt="Contact phone number"
                         className="transition transform hover:scale-110 w-[70%]"
                     />
-                    <img
+                    <Image
                         src="/emailus.svg"
                         alt="Contact email address"
                         className="transition transform hover:scale-110 w-[90%]"

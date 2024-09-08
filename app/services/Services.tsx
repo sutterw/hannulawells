@@ -5,6 +5,7 @@ import {
     securityConsultingData,
     technologySolutionsData,
 } from "../../lib/data";
+import Image from "next/image";
 
 const Services = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -15,22 +16,25 @@ const Services = () => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect(); // Stop observing after the element is in view
+                    observer.disconnect();
                 }
             },
-            { threshold: 0.1 } // Adjust threshold as needed
+            { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const currentRef = sectionRef.current;
+
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []);
+
     // Scroll to top handler
     const scrollToTop = () => {
         window.scrollTo({
@@ -106,7 +110,7 @@ const Services = () => {
                                         isVisible ? "fade-in" : ""
                                     }`}
                                 >
-                                    <img
+                                    <Image
                                         src={item.img}
                                         className="bg-none"
                                         alt={item.title}
@@ -145,7 +149,7 @@ const Services = () => {
                                         isVisible ? "fade-in" : ""
                                     }`}
                                 >
-                                    <img
+                                    <Image
                                         src={item.img}
                                         className="bg-none"
                                         alt={item.title}
@@ -184,7 +188,7 @@ const Services = () => {
                                         isVisible ? "fade-in" : ""
                                     }`}
                                 >
-                                    <img
+                                    <Image
                                         src={item.img}
                                         className="bg-none"
                                         alt={item.header}

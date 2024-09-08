@@ -1,14 +1,18 @@
+"use client";
 import React from "react";
 import Quote from "./Quote";
 
-type Props = {};
+const Page = () => {
+    const handleClose = () => {
+        console.log("Close button clicked");
+        // Handle the close action
+    };
 
-const page = (props: Props) => {
     return (
         <div>
-            <Quote />
+            <Quote close={handleClose} />
         </div>
     );
 };
 
-export default page;
+export default Page;

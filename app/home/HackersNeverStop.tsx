@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const HackersNeverStop = () => {
@@ -10,19 +11,21 @@ const HackersNeverStop = () => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect(); // Stop observing after the element is in view
+                    observer.disconnect();
                 }
             },
-            { threshold: 0.1 } // Adjust threshold as needed
+            { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const currentRef = sectionRef.current;
+
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []);
@@ -54,7 +57,7 @@ const HackersNeverStop = () => {
                 </video>
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
             </div>
-            <img
+            <Image
                 src="/hackerstats.svg"
                 alt="hacker statistics by hannulawells"
                 className={`absolute right-[5%] lg:right-[8%] w-[25%] ${

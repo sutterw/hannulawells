@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type CardProps = {
     image: string;
@@ -13,7 +14,7 @@ const Card = ({ image, title, description, author, link }: CardProps) => {
     return (
         <div className="card w-full sm:w-96 h-[32rem] rounded-lg p-6 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
             <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <img
+            <Image
                 src={image}
                 alt={title}
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-lg filter grayscale group-hover:filter-none transition-all duration-500"

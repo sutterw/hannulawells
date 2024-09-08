@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { sendQuoteEmail } from "../../actions/sendQuoteEmail";
 import toast from "react-hot-toast";
 import QuoteButn from "./quoteButton";
+import Image from "next/image";
 
 type Props = { close: () => void };
 
-const Quote = ({ close }: Props) => {
+const Quote: React.FC<Props> = ({ close }) => {
     const [isVisible, setIsVisible] = useState<boolean>(true);
     const [selectedTests, setSelectedTests] = useState<string[]>([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -147,7 +148,7 @@ const Quote = ({ close }: Props) => {
                         onClick={handleClose}
                         className="absolute hidden lg:block group top-4 right-4 rounded-[50px] text-[rgba(255,255,255,0.9)] x-gradient-border bg-[rgba(35,42,52,0.5)] shadow-[2px_2px_30px_0px_rgba(0,0,0,0.25),_0px_0px_2px_2px_rgba(255,255,255,0.1)] backdrop-blur-[60px] w-20 h-20 flex-shrink-0 transition-all duration-100 hover:bg-[rgba(22,22,22,0.6)]"
                     >
-                        <img
+                        <Image
                             src="x.svg"
                             alt="Close"
                             className="inline h-[25px] w-[25px] transition-transform duration-100 transform group-hover:scale-110"
@@ -524,8 +525,8 @@ const Quote = ({ close }: Props) => {
                                             } overflow-hidden`}
                                         >
                                             <p className="text-white font-semibold ml-4">
-                                                (Describe in "More Details"
-                                                Section)
+                                                (Describe in &quot;More
+                                                Details&quot; Section)
                                             </p>
                                         </div>
                                     </div>
