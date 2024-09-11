@@ -51,6 +51,7 @@ const HackersNeverStop = () => {
                     autoPlay
                     muted
                     loop
+                    playsInline
                     className="w-full h-auto"
                 >
                     <source src="choppingwood.mp4" type="video/mp4" />
