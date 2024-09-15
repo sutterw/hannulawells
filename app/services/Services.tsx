@@ -99,14 +99,14 @@ const Services = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
                     <div className="relative z-10 mb-16 px-4">
-                        <h1 className="font-raleway text-5xl lg:text-6xl font-semibold mb-12 sm:mb-16 lg:mb-20 text-center sm:text-start pt-8 xl:pt-12 sm:ml-8">
+                        <h1 className="font-raleway text-5xl lg:text-7xl md:text-6xl font-[500] mb-8 sm:mb-16 lg:mb-16 md:pt-16 lg:ml-[3.5rem] text-center sm:text-start pt-8 xl:pt-20 xl:mb-20 sm:ml-[2.6rem]">
                             Testing
                         </h1>
                         <ul className="flex flex-col items-center gap-4 sm:gap-8">
                             {testingData.map((item, index) => (
                                 <li
                                     key={index}
-                                    className={`relative flex flex-col w-full sm:w-4/5 pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border ${
+                                    className={`relative flex flex-col w-full sm:w-[90%] pb-6 sm:pb-12 gap-4 justify-center items-center rounded-2xl p-4 sm:p-8 services-background gradient-border ${
                                         isVisible ? "fade-in" : ""
                                     }`}
                                 >
@@ -138,7 +138,7 @@ const Services = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
                     <div className="relative z-10 mb-16 px-4">
-                        <h1 className="font-raleway text-5xl lg:text-6xl font-semibold mb-12 sm:mb-16 lg:mb-20 text-center sm:text-end pt-8 xl:pt-12 sm:mr-8">
+                        <h1 className="font-raleway text-5xl lg:text-6xl font-[500] mb-12 sm:mb-16 lg:mb-20 lg:mr-[3.5rem] text-center sm:text-end pt-8 xl:pt-20 sm:mr-[2.6rem]">
                             Security Consulting
                         </h1>
                         <ul className="flex flex-col items-center gap-4 sm:gap-8">
@@ -177,7 +177,7 @@ const Services = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
                     <div className="relative z-10 mb-16 px-4">
-                        <h1 className="font-raleway text-5xl lg:text-6xl font-semibold mb-12 sm:mb-16 lg:mb-20 text-center sm:text-start pt-8 xl:pt-12 sm:ml-8">
+                        <h1 className="font-raleway text-5xl lg:text-6xl font-[500] mb-12 sm:mb-16 lg:mb-20 lg:ml-[3.5rem] text-center sm:text-start pt-8 xl:pt-12 sm:ml-[2.6rem]">
                             Technology Solutions
                         </h1>
                         <ul className="flex flex-col items-center gap-4 sm:gap-8">
