@@ -99,7 +99,7 @@ const Services = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
                     <div className="relative z-10 mb-16 px-4">
-                        <h1 className="font-raleway text-5xl lg:text-7xl md:text-6xl font-[500] mb-8 sm:mb-16 lg:mb-16 md:pt-16 lg:ml-[3.5rem] text-center sm:text-start pt-8 xl:pt-20 xl:mb-20 sm:ml-[2.6rem]">
+                        <h1 className="font-raleway text-5xl lg:text-[4.125rem] md:text-6xl font-[600] mb-8 sm:mb-16 lg:mb-16 md:pt-16 lg:ml-[3.5rem] text-center sm:text-start pt-8 xl:pt-20 xl:mb-20 sm:ml-[2.6rem]">
                             Testing
                         </h1>
                         <ul className="flex flex-col items-center gap-4 sm:gap-8">
