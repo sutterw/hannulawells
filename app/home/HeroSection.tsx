@@ -19,11 +19,11 @@ const HeroSection = (props: Props) => {
             >
                 <source src="hero-video.mp4" type="video/mp4" />
             </video>
-            <div className="absolute mt-[8%] inset-0 flex flex-col items-center justify-center text-white text-center">
+            <div className="absolute mt-[-5%] inset-0 flex flex-col items-center justify-center text-white text-center">
                 <motion.h1
                     className="font-raleway text-[3.3rem] font-bold"
                     initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 0.80, y: 0 }}
                     transition={{ delay: 0, duration: 1 }}
                 >
                     <span className="text-white opacity-65">People</span> first.
@@ -31,7 +31,7 @@ const HeroSection = (props: Props) => {
                 <motion.h1
                     className="font-raleway text-[3.3rem] font-bold text-white"
                     initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 0.65, y: 0 }}
+                    animate={{ opacity: 0.80, y: 0 }}
                     transition={{ delay: 2, duration: 1 }}
                 >
                     Technology second.
@@ -51,40 +51,6 @@ const HeroSection = (props: Props) => {
                     <p className="font-raleway text-4xl font-bold mt-8">
                         Cyber Security Services
                     </p>
-                </motion.div>
-                <motion.div className="mt-10 flex gap-4 relative top-[10%]">
-                    <Link
-                        href={"/contact"}
-                        className={`font-raleway text-[1.2rem]
-                            relative z-0 flex items-center gap-2 overflow-hidden rounded-lg 
-                            px-4 py-2 text-white transition-all duration-500
-                            before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
-                            before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
-                            before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
-                            before:content-[""] 
-                            hover:text-neutral-900 hover:before:bg-white
-                            hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]
-                            hover:before:translate-x-[0%] hover:before:translate-y-[0%]
-                        `}
-                    >
-                        <span>Contact Us</span>
-                    </Link>
-                    <Link
-                        href={"#our-services"}
-                        className={`font-raleway text-[1.2rem]
-                            relative z-0 flex items-center gap-2 overflow-hidden rounded-lg 
-                            px-4 py-2 text-white transition-all duration-500
-                            before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
-                            before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
-                            before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
-                            before:content-[""] 
-                            hover:text-neutral-900 hover:before:bg-white
-                            hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]
-                            hover:before:translate-x-[0%] hover:before:translate-y-[0%]
-                        `}
-                    >
-                        <span>Learn More</span>
-                    </Link>
                 </motion.div>
             </div>
         </section>

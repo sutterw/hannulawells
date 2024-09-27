@@ -39,6 +39,8 @@ const PeopleMatter = () => {
         >
             <Image
                 src="/whiteW.svg"
+                width={75}
+                height={75}
                 alt="white hannulawells logo on homepage"
                 className={`w-[40%] lg:w-[20%] h-auto mt-32 ${
                     isVisible ? "fade-in-logo" : ""
