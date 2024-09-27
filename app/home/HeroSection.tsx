@@ -26,7 +26,7 @@ const HeroSection = (props: Props) => {
                     animate={{ opacity: 0.80, y: 0 }}
                     transition={{ delay: 0, duration: 1 }}
                 >
-                    <span className="text-white opacity-65">People</span> first.
+                    <span className="text-white">People</span> first.
                 </motion.h1>
                 <motion.h1
                     className="font-raleway text-[3.3rem] font-bold text-white"
