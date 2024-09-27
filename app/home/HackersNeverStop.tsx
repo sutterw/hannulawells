@@ -60,6 +60,8 @@ const HackersNeverStop = () => {
             </div>
             <Image
                 src="/hackerstats.svg"
+                width={75}
+                height={75}
                 alt="hacker statistics by hannulawells"
                 className={`absolute right-[5%] lg:right-[8%] w-[25%] ${
                     isVisible ? "fade-from-right" : ""
